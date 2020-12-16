@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.BasePage;
 import utilities.Elements;
+import utilities.RandomEmailGen;
 
 import java.time.Duration;
 
@@ -31,7 +32,7 @@ public class BuyMeHomePage extends BasePage {
         wait.until(ExpectedConditions.presenceOfElementLocated(Elements.FIRST_NAME_FIELD_IN_REGISTRATION_WINDOW));
         sendKeysToElement(Elements.FIRST_NAME_FIELD_IN_REGISTRATION_WINDOW, firstName);
         wait.until(ExpectedConditions.presenceOfElementLocated(Elements.EMAIL_FIELD_IN_REGISTRATION_WINDOW));
-        sendKeysToElement(Elements.EMAIL_FIELD_IN_REGISTRATION_WINDOW, emailAddress);
+        sendKeysToElement(Elements.EMAIL_FIELD_IN_REGISTRATION_WINDOW, RandomEmailGen.emailGen() + "@gmail.com");
         wait.until(ExpectedConditions.presenceOfElementLocated(Elements.PASSWORD_FIELD_IN_REGISTRATION_WINDOW));
         sendKeysToElement(Elements.PASSWORD_FIELD_IN_REGISTRATION_WINDOW, password);
         wait.until(ExpectedConditions.presenceOfElementLocated(Elements.CONFIRM_PASSWORD_FIELD_IN_REGISTRATION_WINDOW));

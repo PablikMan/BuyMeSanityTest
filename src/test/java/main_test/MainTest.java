@@ -7,21 +7,24 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.BuyMeHomePage;
 import pages.PickBusinessPage;
+import utilities.DataBaseSetup;
 import utilities.Driver;
 import utilities.TestSetUp;
+
+import java.sql.Connection;
 
 import static utilities.XMLSetUp.getData;
 
 public class MainTest extends TestSetUp {
 
     private static WebDriver driver;
+    private static Connection con;
 
     @BeforeClass
     public static void setDriverAndOpenWebsite(){
         testSetUp();
         driver = Driver.getChromeDriverInstance();
         driver.manage().window().maximize();
-        Driver.openURL("BuyMe");
         test.log(Status.INFO, "beginning of the test");
     }
 
