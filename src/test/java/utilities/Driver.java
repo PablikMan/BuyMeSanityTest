@@ -13,6 +13,7 @@ public class Driver extends DataBaseSetup {
     public static WebDriver getChromeDriverInstance(){
         if (driver == null){
             con = getConnection();
+            //createResultsTable(con);
             //createConfigTable(con);
             String urlString = getConfigTableURL(con);
             String typeOfBrowser = getConfigTableBrowser(con);
