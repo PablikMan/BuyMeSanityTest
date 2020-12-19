@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -44,8 +45,8 @@ public class BuyMeHomePage extends BasePage {
     public void searchWithUsingTheFilters(WebDriver driver){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(Elements.PRICE_LIST));
-        clickElement(Elements.PRICE_LIST);
+        wait.until(ExpectedConditions.presenceOfElementLocated((By) Elements.PRICE_LIST));
+        clickElement((By) Elements.PRICE_LIST);
         wait.until(ExpectedConditions.presenceOfElementLocated(Elements.UP_TO_99_IN_PRICE_LIST));
         clickElement(Elements.UP_TO_99_IN_PRICE_LIST);
 

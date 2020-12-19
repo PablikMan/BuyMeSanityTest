@@ -1,10 +1,13 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.BasePage;
 import utilities.Elements;
+import static org.openqa.selenium.support.locators.RelativeLocator.*;
 
 import java.time.Duration;
 
@@ -59,7 +62,6 @@ public class PickBusinessPage extends BasePage {
         clickElement(Elements.SEND_BY_MAIL_OPTION);
         wait.until(ExpectedConditions.presenceOfElementLocated(Elements.MAIL_TEXT_FIELD_POPUP));
         sendKeysToElement(Elements.MAIL_TEXT_FIELD_POPUP, "paul123456@gmail.com");
-        driver.findElement(Elements.SAVE_BUTTON_IN_MAIL_OPTION);
         clickElement(Elements.SAVE_BUTTON_IN_MAIL_OPTION);
     }
 

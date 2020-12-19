@@ -23,11 +23,17 @@ public class BasePage extends TestSetUp {
             getWebElement(locator).click();
         }catch (NoSuchElementException e){
             test.log(Status.FAIL, "could not find locator" + locator);
+            takeScreenShot("C:\\Users\\פבליק\\IdeaProjects\\BuyMeSanityTest\\src\\test\\java\\images\\screenshot");
         }
     }
 
     public void sendKeysToElement(By locator, String text){
-        getWebElement(locator).sendKeys(text);
+        try{
+            getWebElement(locator).sendKeys(text);
+        }catch (NoSuchElementException e){
+            test.log(Status.FAIL, "could not find locator" + locator);
+            takeScreenShot("C:\\Users\\פבליק\\IdeaProjects\\BuyMeSanityTest\\src\\test\\java\\images\\screenshot");
+        }
     }
 
 }
